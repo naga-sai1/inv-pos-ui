@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { PasswordInput } from '@/components/password-input'
+import { log } from 'console'
 
 type UserAuthFormProps = HTMLAttributes<HTMLDivElement>
 
@@ -55,11 +56,12 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       })
     },
     onError: (error) => {
+      console.log('error', error);
       toast({
         variant: 'destructive',
         title: 'Login failed',
         description:
-          error instanceof Error ? error.message : 'Please try again',
+          error instanceof Error ?  error.response.data.message : 'Please try again',
       })
       setIsLoading(false)
     },

@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const baseURL = 'http://192.168.0.110:3123/'
+// const baseURL = 'http://192.168.0.105:3123/'
 
-// const baseURL = 'https://apiswatchpos.invtechnologies.in/'
+const baseURL = 'https://apimultistorepos.invtechnologies.in/'
 
 const api = axios.create({
   baseURL,
